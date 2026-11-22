@@ -5,6 +5,8 @@ class Flower(models.Model):
     id = models.AutoField(primary_key=True)
     code = models.CharField(max_length=10, unique=True)
     name = models.CharField(max_length=100)
+    botanical_name = models.CharField(max_length=100)
+    availability = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
     flower_type = models.CharField(max_length=100)
     market_specifications = models.TextField()
