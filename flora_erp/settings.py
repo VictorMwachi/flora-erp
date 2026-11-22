@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gd&j36koky6iei$8owo(asxvh$zr2@=j^ll-4im4w*h#p^d@c)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['flora-erp-hlkf.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
