@@ -10,9 +10,13 @@ class Flower(models.Model):
     market_specifications = models.TextField()
     description = models.TextField()
     is_active = models.BooleanField(default=True)
-    image = models.ImageField(upload_to='flowers/')
+    #image = models.ImageField(upload_to='flowers/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.name} ({self.code})"
+
 
 class FlowerGrade(models.Model):
     id = models.AutoField(primary_key=True)
