@@ -10,6 +10,7 @@ class Flower(models.Model):
     category = models.CharField(max_length=100)
     flower_type = models.CharField(max_length=100)
     market_specifications = models.TextField()
+    pack_rate_stems = models.IntegerField()
     description = models.TextField()
     is_active = models.BooleanField(default=True)
     #image = models.ImageField(upload_to='flowers/')
@@ -18,7 +19,19 @@ class Flower(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.code})"
+    
+class FlowerVariety(models.Model):
+    id = models.AutoField(primary_key=True)
+    flower = models.ForeignKey(Flower, on_delete=models.CASCADE)
+    variety_code = models.CharField(max_length=10, unique=True)
+    variety_name = models.CharField(max_length=100)
+    description = models.TextField()
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f"{self.variety_name} ({self.variety_code})"
 
 class FlowerGrade(models.Model):
     id = models.AutoField(primary_key=True)

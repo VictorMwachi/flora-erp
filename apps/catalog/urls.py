@@ -1,9 +1,10 @@
-from .views import FlowerViewSet, FlowerGradeViewSet
+from .views import FlowerVarietyViewSet, FlowerViewSet, FlowerGradeViewSet
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register(r'flowers', FlowerViewSet)
+router.register(r'flower-varieties', FlowerVarietyViewSet)
 router.register(r'flower-grades', FlowerGradeViewSet)
 
 urlpatterns = [
